@@ -13,7 +13,7 @@ My attempt to help solving the DWANGO9 wad mystery.
 Inspired by doomkid's idea in timestamp 3:08 of his video, I started working on a automated process to search for the dwango9 image in a WAD. As a Python programmer, I began my process by looking for a library to help me dump LUMP info more easily and I found Omgifol, originaly created by Fredrik Johansson and now maintened by Devin Acker (https://github.com/devinacker/omgifol). First, I stored the data from the WOLF6 LUMP of the DWANGO!.WAD as our flag to be found. The rest of the algorithm is explained as follows:
 
  1. open a WAD
- 2. loop through the possible groups of LUMPs in which the flag could be found (patches, flats, graphics, data)
+ 2. loop through the possible groups of LUMPs in which the flag could be found (patches, graphics, data)
  2. for each LUMP, compare its raw data with our flag's raw data
  3. if it matches, save in a text file the information where it was found to future inspection (WAD filename, LUMP name)
  4. repeat until the end of the WAD
@@ -23,7 +23,7 @@ Now it’s just a matter of running the script in batch for a large group of arc
 ## Install package dependencies
 
 ```python
-pip3 install --user omgifol
+pip3 install --user --upgrade -r requirements.txt
 ```
 
 ## Using the script
