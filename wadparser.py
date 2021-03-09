@@ -1,3 +1,8 @@
+"""
+Artur Rodrigues Rocha Neto
+tuturbo1991@DWF
+"""
+
 import sys
 import numpy as np
 from omg import *
@@ -41,11 +46,11 @@ with open(dumpfile, "a") as dump:
         try:
             gfx = Graphic(lump.data)
             img = np.array(gfx.to_Image())
-            
             ans = calculate_similarity(flag_img, img)
             
-            if abs(ans) >= 0.1:
+            if abs(ans) >= 0.05:
                 gfx.to_file(f"temp/{name}.bmp")
+                print(img.shape)
                 print(name, ans)
         except:
             pass
